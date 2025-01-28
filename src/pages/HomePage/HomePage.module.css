@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 1440px;
+  height: 696px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/assets/images/PictureTruck.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  height: 176px;
+  margin: 260px 804px 260px 64px;
+}
+
+.text1 {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 32px;
+  color: #f7f7f7;
+  margin-bottom: 16px;
+}
+
+.text2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #f7f7f7;
+  margin-bottom: 40px;
+}
