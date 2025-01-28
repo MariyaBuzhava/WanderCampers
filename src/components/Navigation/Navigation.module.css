@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.link {
+  text-decoration: none;
+  color: #101828;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  transition: color 0.3s;
+  &:hover {
+    color: #d84343;
+  }
+}
+
+.activeLink {
+  color: #d84343;
+}
