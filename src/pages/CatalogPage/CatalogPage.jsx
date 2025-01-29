@@ -1,5 +1,11 @@
+import SearchBar from "../../components/SearchBar/SearchBar.jsx";
+
 function CatalogPage() {
-  return <div>CatalogPage</div>;
+  return (
+    <div>
+      <SearchBar />
+    </div>
+  );
 }
 
 export default CatalogPage;
