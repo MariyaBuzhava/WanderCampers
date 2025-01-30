@@ -1,9 +1,10 @@
+import c from "./SearchBar.module.css";
 import Filters from "../Filters/Filters.jsx";
 import Location from "../Location/Location.jsx";
 
 function SearchBar() {
   return (
-    <div>
+    <div className={c.container}>
       <Location />
       <Filters />
       <button>Search</button>
