@@ -7,7 +7,7 @@ function Location() {
         Location
         <div className={c.wrapper}>
           <svg className={c.icon} width="20" height="20">
-            <use href="/public/images/symbol-defs.svg#icon-Map" />
+            <use href="/images/symbol-defs.svg#icon-Map" />
           </svg>
           <input
             type="text"
