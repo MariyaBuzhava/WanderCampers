@@ -15,6 +15,10 @@ function Camper({ camper, isFavorite }) {
       dispatch(addToFavorites(camper.id));
     }
   };
+
+  const handleShowMoreClick = () => {
+    window.open(`/campers/${camper.id}`, "_blank");
+  };
   return (
     <li className={c.camperWrapper}>
       <div className={c.camperItem}>
@@ -107,7 +111,9 @@ function Camper({ camper, isFavorite }) {
                 </span>
               ))}
           </div>
-          <button className="btn">Show more</button>
+          <button className="btn" onClick={handleShowMoreClick}>
+            Show more
+          </button>
         </div>
       </div>
     </li>
