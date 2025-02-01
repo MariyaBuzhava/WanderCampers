@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import c from "./HomePage.module.css";
 
 function HomePage() {
@@ -8,7 +9,9 @@ function HomePage() {
         <h3 className={c.text2}>
           You can find everything you want in our catalog
         </h3>
-        <button className="btn">View Now</button>
+        <Link to="/catalog" className="btn">
+          View Now
+        </Link>
       </div>
     </div>
   );
