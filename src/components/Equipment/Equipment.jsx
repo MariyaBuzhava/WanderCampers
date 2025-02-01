@@ -3,13 +3,6 @@ import { setFilter } from "../../redux/slices/filtersSlice";
 import c from "./Equipment.module.css";
 
 function Equipment() {
-  // const [filters, setFilters] = useState({
-  //   ac: false,
-  //   automatic: false,
-  //   kitchen: false,
-  //   tv: false,
-  //   bathroom: false,
-  // });
   const dispatch = useDispatch();
 
   const handleCheckboxChange = (event) => {

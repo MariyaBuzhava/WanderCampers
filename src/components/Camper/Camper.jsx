@@ -17,7 +17,7 @@ function Camper({ camper, isFavorite }) {
   };
 
   const handleShowMoreClick = () => {
-    window.open(`/campers/${camper.id}`, "_blank");
+    window.open(`/catalog/${camper.id}`, "_blank");
   };
   return (
     <li className={c.camperWrapper}>
