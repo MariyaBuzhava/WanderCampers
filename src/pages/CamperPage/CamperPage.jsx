@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import c from "./CamperPage.module.css";
 import { fetchCamperById } from "../../redux/operations";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCamper,
@@ -11,7 +11,6 @@ import {
 
 function CamperPage() {
   const { id } = useParams();
-
   const dispatch = useDispatch();
 
   const camper = useSelector(selectCamper);
@@ -21,6 +20,12 @@ function CamperPage() {
   useEffect(() => {
     dispatch(fetchCamperById(id));
   }, [dispatch, id]);
+
+  const [activeSection, setActiveSection] = useState("features");
+
+  const handleTabClick = (section) => {
+    setActiveSection(section);
+  };
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -76,12 +81,18 @@ function CamperPage() {
       </div>
       <div className={c.tabs}>
         <div className={c.titles}>
-          <Link to="features" className={c.title}>
+          <button
+            onClick={() => handleTabClick("features")}
+            className={`${c.title} ${activeSection === "features" ? c.active : ""}`}
+          >
             Features
-          </Link>
-          <Link to="reviews" className={c.title}>
+          </button>
+          <button
+            onClick={() => handleTabClick("reviews")}
+            className={`${c.title} ${activeSection === "reviews" ? c.active : ""}`}
+          >
             Reviews
-          </Link>
+          </button>
         </div>
         <div className={c.lineWrapper}>
           <svg className={c.line} width="1312" height="2">
@@ -89,7 +100,108 @@ function CamperPage() {
           </svg>
         </div>
       </div>
-      {/* <Outlet /> */}
+      <div className={c.content}>
+        {activeSection === "features" && (
+          <>
+            <div className={c.containerFeatures}>
+              <div className={c.camperFeatures}>
+                {[
+                  { icon: "icon-wind", name: "AC", value: camper.AC },
+                  {
+                    icon: "icon-ph_shower",
+                    name: "Bathroom",
+                    value: camper.bathroom,
+                  },
+                  {
+                    icon: "icon-cup-hot",
+                    name: "Kitchen",
+                    value: camper.kitchen,
+                  },
+                  { icon: "icon-tv", name: "TV", value: camper.TV },
+                  {
+                    icon: "icon-ui-radios",
+                    name: "Radio",
+                    value: camper.radio,
+                  },
+                  {
+                    icon: "icon-solar_fridge-outline",
+                    name: "Refrigerator",
+                    value: camper.refrigerator,
+                  },
+                  {
+                    icon: "icon-lucide_microwave",
+                    name: "Microwave",
+                    value: camper.microwave,
+                  },
+                  {
+                    icon: "icon-hugeicons_gas-stove",
+                    name: "Gas",
+                    value: camper.gas,
+                  },
+                  {
+                    icon: "icon-ion_water-outline",
+                    name: "Water",
+                    value: camper.water,
+                  },
+                ]
+                  .filter((feature) => feature.value)
+                  .map((feature, index) => (
+                    <span key={index} className={c.camperFeature}>
+                      <svg
+                        className={`${c.icon} ${["icon-hugeicons_gas-stove", "icon-ion_water-outline", "icon-lucide_microwave"].includes(feature.icon) ? c.specialIcon : ""}`}
+                        width="20"
+                        height="20"
+                      >
+                        <use href={`/images/symbol-defs.svg#${feature.icon}`} />
+                      </svg>
+                      <p>{feature.name}</p>
+                    </span>
+                  ))}
+              </div>
+              <div className={c.details}>
+                <h2 className={c.detailsTitle}>Vehicle details</h2>
+                <div className={c.lineWrapper}>
+                  <svg className={c.line} width="527" height="2">
+                    <use href="/images/symbol-defs.svg#line"></use>
+                  </svg>
+                </div>
+                <div className={c.detailInfo}>
+                  <div className={c.info}>
+                    <p className={c.detailText}>Form</p>
+                    <p className={c.detailText}>{camper.form}</p>
+                  </div>
+                  <div className={c.info}>
+                    <p className={c.detailText}>Length</p>
+                    <p className={c.detailText}>{camper.length}</p>
+                  </div>
+                  <div className={c.info}>
+                    <p className={c.detailText}>Width</p>
+                    <p className={c.detailText}>{camper.width}</p>
+                  </div>
+                  <div className={c.info}>
+                    <p className={c.detailText}>Height</p>
+                    <p className={c.detailText}>{camper.height}</p>
+                  </div>
+                  <div className={c.info}>
+                    <p className={c.detailText}>Tank</p>
+                    <p className={c.detailText}>{camper.tank}</p>
+                  </div>
+                  <div className={c.info}>
+                    <p className={c.detailText}>Consumption</p>
+                    <p className={c.detailText}>{camper.consumption}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+        {activeSection === "reviews" && (
+          <div>
+            <h3>Reviews Section</h3>
+            <p>Here are the reviews for the camper...</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
