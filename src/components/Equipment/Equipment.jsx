@@ -1,21 +1,20 @@
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setFilter } from "../../redux/slices/filtersSlice";
 import c from "./Equipment.module.css";
 
 function Equipment() {
-  const [filters, setFilters] = useState({
-    ac: false,
-    automatic: false,
-    kitchen: false,
-    tv: false,
-    bathroom: false,
-  });
+  // const [filters, setFilters] = useState({
+  //   ac: false,
+  //   automatic: false,
+  //   kitchen: false,
+  //   tv: false,
+  //   bathroom: false,
+  // });
+  const dispatch = useDispatch();
 
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [name]: checked,
-    }));
+    dispatch(setFilter({ name, value: checked }));
   };
   return (
     <div className={c.container}>
@@ -37,7 +36,6 @@ function Equipment() {
             <input
               type="checkbox"
               name={name}
-              checked={filters[name]}
               onChange={handleCheckboxChange}
             />
             <div className={c.checkboxContent}>

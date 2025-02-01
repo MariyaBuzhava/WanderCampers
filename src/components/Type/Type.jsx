@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setVehicleType } from "../../redux/slices/filtersSlice";
 import c from "./Type.module.css";
 
 function Type() {
-  const [vehicleType, setVehicletype] = useState("");
-
+  const dispatch = useDispatch();
   const handleTypeChange = (event) => {
-    setVehicletype(event.target.value);
+    dispatch(setVehicleType(event.target.value));
   };
   return (
     <div className={c.container}>
@@ -25,15 +25,11 @@ function Type() {
           },
           { value: "alcove", icon: "icon-bi_grid-3x3-gap", label: "Alcove" },
         ].map(({ value, icon, label }) => (
-          <label
-            key={value}
-            className={`${c.checkboxItem} ${vehicleType === value ? c.checked : ""}`}
-          >
+          <label key={value} className={c.checkboxItem}>
             <input
               type="radio"
               name="vehicleType"
               value={value}
-              checked={vehicleType === value}
               onChange={handleTypeChange}
             />
             <div className={c.checkboxContent}>

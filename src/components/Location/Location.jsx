@@ -1,6 +1,13 @@
+import { useDispatch } from "react-redux";
 import c from "./Location.module.css";
+import { setLocation } from "../../redux/slices/filtersSlice";
 
 function Location() {
+  const dispatch = useDispatch();
+
+  const handleLocationChange = (event) => {
+    dispatch(setLocation(event.target.value));
+  };
   return (
     <div className={c.container}>
       <label className={c.lable}>
@@ -14,6 +21,7 @@ function Location() {
             name="location"
             placeholder="City"
             className={c.input}
+            onChange={handleLocationChange}
           />
         </div>
       </label>

@@ -8,7 +8,7 @@ function HomePage() {
         <h3 className={c.text2}>
           You can find everything you want in our catalog
         </h3>
-        <button>View Now</button>
+        <button className="btn">View Now</button>
       </div>
     </div>
   );
