@@ -26,16 +26,3 @@ export const fetchCamperById = createAsyncThunk(
     }
   }
 );
-
-export const fetchFilteredCampers = createAsyncThunk(
-  "campers/fetchFiltered",
-  async (filters = {}, thunkAPI) => {
-    try {
-      const queryParams = new URLSearchParams(filters).toString();
-      const response = await axios.get(`/campers?${queryParams}`);
-      return response.data.items;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);
