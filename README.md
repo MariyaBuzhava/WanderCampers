@@ -14,10 +14,13 @@
    ```sh
    git clone https://github.com/yourusername/WanderCampers.git
 2. Navigate to the project directory:
-cd WanderCampers
+   ```sh
+   cd WanderCampers
 3. Install dependencies:
-npm install
+  ```sh
+  npm install
 4. Run the application in development mode:
-npm start
+   ```sh
+   npm start
 Author
 Maria — Frontend Developer passionate about creating responsive web applications and modern UI/UX solutions.
