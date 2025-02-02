@@ -23,3 +23,71 @@ img {
   display: block;
   max-width: 100%;
 }
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 200px;
+  padding: 16px 60px;
+  border: none;
+  background-color: #e44848;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  cursor: pointer;
+  transition: bacground-color 0.3s ease;
+  &:hover {
+    background-color: #d84343;
+  }
+}
+
+.titleFilters {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #101828;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.react-datepicker__month-container {
+  display: flex;
+  flex-direction: column;
+  width: 276px;
+  height: 284px;
+}
+
+.react-datepicker-wrapper {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  height: 0;
+}
+
+.react-datepicker-popper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transform: translate(143px, 75px);
+}
+
+.react-datepicker__header {
+  display: flex;
+  border-bottom: 1px solid #aeaeae;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+}
