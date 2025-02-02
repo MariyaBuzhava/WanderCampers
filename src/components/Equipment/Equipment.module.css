@@ -26,6 +26,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px 12px;
+  max-height: 200px;
+  overflow: auto;
 }
 
 .checkboxItem {
@@ -58,6 +60,12 @@
 
 .icon {
   fill: #101828;
+  stroke: none;
+}
+
+.specialIcon {
+  fill: none;
+  stroke: #101828;
 }
 
 span {
