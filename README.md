@@ -22,5 +22,6 @@
 4. Run the application in development mode:
    ```sh
    npm start
+
 Author
 Maria — Frontend Developer passionate about creating responsive web applications and modern UI/UX solutions.
