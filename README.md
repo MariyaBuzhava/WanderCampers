@@ -17,8 +17,8 @@
    ```sh
    cd WanderCampers
 3. Install dependencies:
-  ```sh
-  npm install
+   ```sh
+   npm install
 4. Run the application in development mode:
    ```sh
    npm start
