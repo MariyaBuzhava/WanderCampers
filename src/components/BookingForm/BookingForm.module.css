@@ -1,0 +1,80 @@
+.form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 44px 57px;
+  width: 641px;
+  height: 588px;
+}
+
+.formTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formDiv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input,
+textarea {
+  display: flex;
+  border-radius: 12px;
+  padding: 18px;
+  background-color: #f7f7f7;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  width: 527px;
+}
+
+.dateWrapper {
+  position: relative;
+  width: 527px;
+}
+
+.customDateInput {
+  padding: 16px;
+  font-size: 16px;
+  color: #6c717b;
+  background: #f7f7f7;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  z-index: 999;
+}

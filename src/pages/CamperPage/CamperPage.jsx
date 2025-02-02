@@ -8,6 +8,7 @@ import {
   selectError,
   selectIsLoading,
 } from "../../redux/selectors/campersSelectors";
+import BookingForm from "../../components/BookingForm/BookingForm";
 
 function CamperPage() {
   const { id } = useParams();
@@ -241,6 +242,7 @@ function CamperPage() {
             </div>
           </div>
         )}
+        <BookingForm />
       </div>
     </div>
   );

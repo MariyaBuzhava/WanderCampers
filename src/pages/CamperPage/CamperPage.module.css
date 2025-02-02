@@ -112,6 +112,11 @@
   color: #475467;
 }
 
+.content {
+  display: flex;
+  gap: 40px;
+}
+
 .tabs {
   display: flex;
   align-items: flex-start;
@@ -139,7 +144,6 @@
   padding: 0;
   cursor: pointer;
   text-align: left;
-  /* transition: color 0.3s; */
 }
 
 .lineWrapper {
