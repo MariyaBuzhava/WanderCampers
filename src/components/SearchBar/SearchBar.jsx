@@ -25,7 +25,7 @@ function SearchBar() {
 
     if (filters.vehicleType) {
       filtered = filtered.filter(
-        (camper) => camper.vehicleType === filters.vehicleType
+        (camper) => camper.form === filters.vehicleType
       );
     }
 

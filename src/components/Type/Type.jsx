@@ -1,12 +1,12 @@
-// import { useDispatch } from "react-redux";
-// import { setVehicleType } from "../../redux/slices/filtersSlice";
+import { useDispatch } from "react-redux";
+import { setVehicleType } from "../../redux/slices/filtersSlice";
 import c from "./Type.module.css";
 
 function Type() {
-  // const dispatch = useDispatch();
-  // const handleTypeChange = (event) => {
-  //   dispatch(setVehicleType(event.target.value));
-  // };
+  const dispatch = useDispatch();
+  const handleTypeChange = (event) => {
+    dispatch(setVehicleType(event.target.value));
+  };
   return (
     <div className={c.container}>
       <h2 className="titleFilters">Vehicle type</h2>
@@ -30,7 +30,7 @@ function Type() {
               type="radio"
               name="vehicleType"
               value={value}
-              // onChange={handleTypeChange}
+              onChange={handleTypeChange}
             />
             <div className={c.checkboxContent}>
               <svg className={c.icon} width="32" height="32">

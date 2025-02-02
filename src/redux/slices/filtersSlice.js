@@ -52,6 +52,11 @@ const filtersSlice = createSlice({
   },
 });
 
-export const { setLocation, setFilteredCampers, setFilter, resetFilters } =
-  filtersSlice.actions;
+export const {
+  setLocation,
+  setVehicleType,
+  setFilteredCampers,
+  setFilter,
+  resetFilters,
+} = filtersSlice.actions;
 export default filtersSlice.reducer;
