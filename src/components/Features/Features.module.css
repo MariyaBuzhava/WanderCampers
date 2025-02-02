@@ -1,0 +1,79 @@
+.containerFeatures {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 44px 52px;
+  width: 631px;
+  height: 588px;
+  background-color: #f7f7f7;
+}
+
+.camperFeatures {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.camperFeature {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  background: #f2f4f7;
+}
+
+.icon {
+  fill: #101828;
+  stroke: none;
+}
+
+.specialIcon {
+  fill: none;
+  stroke: #101828;
+}
+
+.details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 527px;
+  height: 296px;
+}
+
+.detailsTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 527px;
+  height: 224px;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.detailText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #101828;
+}
