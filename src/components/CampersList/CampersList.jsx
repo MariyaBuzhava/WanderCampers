@@ -50,7 +50,7 @@ export default function CampersList() {
       ) : (
         <p>No campers found.</p>
       )}
-      {visibleCampers < campersToDisplay.length && (
+      {visibleCampers < (filteredCampers.length || campers.length) && (
         <button className={c.btnLoad} onClick={handleLoadMore}>
           Load more
         </button>
